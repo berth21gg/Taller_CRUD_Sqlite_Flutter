@@ -31,4 +31,13 @@ class DIARY extends CRUD {
   remove() async {
     await delete(id);
   }
+
+  Future<List<DIARY>> getDiaries() async {
+    var result = await query('SELECT * FROM $diaryTable');
+    return _getListObject(result);
+  }
+
+  List<DIARY> _getListObject(parsed) {
+    return (parsed as List).map((map) => toObject(map)).toList();
+  }
 }
