@@ -46,4 +46,12 @@ class DIARY extends CRUD {
   List<DIARY> _getListObject(parsed) {
     return (parsed as List).map((map) => toObject(map)).toList();
   }
+
+  Future<DIARY> checkEnterCode() async {
+    var result = await query(
+        'SELECT * FROM $diaryTable WHERE id = ? AND $enterCode = ?',
+        arguments: [id, enterCode]);
+
+    return toObject(result);
+  }
 }

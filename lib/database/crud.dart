@@ -16,7 +16,8 @@ abstract class CRUD {
   }
 
   update(Map<String, dynamic> data) async {
-    return (await database).update(table, data);
+    return (await database)
+        .update(table, data, where: 'id = ?', whereArgs: [data['id']]);
   }
 
   create(Map<String, dynamic> data) async {

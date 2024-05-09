@@ -49,22 +49,22 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() async {
     // Insertar registro
-    DIARY diary = DIARY(type: 'Escuela', enterCode: 'qwerty');
-    int id = await diary.save();
-    print('Id del diario: $id');
-
-    // setState(() {
-    //   diaries;
-    // });
-
-    // Eliminar registro con id
-    // DIARY diary = DIARY(id: 1, type: 'Escuela', enterCode: 'qwerty');
+    // DIARY diary = DIARY(type: 'Trabajo', enterCode: 'qwerty');
     // int id = await diary.save();
     // print('Id del diario: $id');
 
     // setState(() {
     //   diaries;
     // });
+
+    // Actualizar registro con id
+    DIARY diary = DIARY(id: 3, type: 'Escuela', enterCode: 'qwerty');
+    int id = await diary.save();
+    print('Id del diario: $id');
+
+    setState(() {
+      diaries;
+    });
 
     // Eliminar registro con id
     // DIARY diary = DIARY(id: 1, type: 'Escuela', enterCode: 'qwerty');
