@@ -8,6 +8,12 @@ class DIARY extends CRUD {
 
   DIARY({this.id = 0, this.type = '', this.enterCode = ''}) : super(diaryTable);
 
+  @override
+  String toString() {
+    // TODO: implement toString
+    return '\n id: $id tipo: $type \n';
+  }
+
   DIARY toObject(Map<dynamic, dynamic> data) {
     return DIARY(
       id: data['id'],
@@ -18,7 +24,7 @@ class DIARY extends CRUD {
 
   Map<String, dynamic> toMap() {
     return {
-      'id': id,
+      'id': id > 0 ? id : null,
       'type': type,
       'enterCode': enterCode,
     };

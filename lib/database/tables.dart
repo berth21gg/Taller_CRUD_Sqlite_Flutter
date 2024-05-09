@@ -18,5 +18,5 @@ List get tables => [
     ];
 
 _createTable(String table, String columns) {
-  return 'CREATE TABLE IF NOT EXIST $table ($columns)';
+  return 'CREATE TABLE IF NOT EXISTS $table ($columns)';
 }
